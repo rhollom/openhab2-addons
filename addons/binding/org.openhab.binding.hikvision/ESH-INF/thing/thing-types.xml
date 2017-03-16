@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="hikvision"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
+        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+
+    <!-- Hikvision Thing Type -->
+    <thing-type id="hikvision">
+        <label>Hikvision Binding Thing</label>
+        <description>Thing definition for Hikvision Binding</description>
+
+        <channels>
+            <channel id="VMD" typeId="VMD"/>
+            <channel id="fielddetection" typeId="fielddetection"/>
+            <channel id="linedetection" typeId="linedetection"/>
+            <channel id="snapshot" typeId="snapshot"/>
+            <channel id="videoloss" typeId="videoloss"/>
+        </channels>
+        
+        <config-description>
+            <parameter name="serialNo" type="text">
+                <label>Serial Number</label>
+                <description>The serial number of the Hikvision camera</description>
+                <required>false</required>
+            </parameter>
+            <parameter name="ipAddress" type="text">
+                <label>IP Address</label>
+                <description>The IP address of the Hikvision camera</description>
+                <required>true</required>
+            </parameter>
+            <parameter name="username" type="text">
+                <label>User Name</label>
+                <description>The username for the Hikvision camera</description>
+                <required>true</required>
+            </parameter>
+            <parameter name="password" type="text">
+                <label>Password</label>
+                <description>The password for the Hikvision camera</description>
+                <required>true</required>
+            </parameter>
+        </config-description>
+    </thing-type>
+
+    <!-- Channel Types -->
+    <channel-type id="VMD">
+        <item-type>Switch</item-type>
+        <label>Video Motion Detection Channel</label>
+        <description>Notification channel for Hikvision motion detection events</description>
+        <state readOnly="true"></state>
+        <config-description>
+            <parameter name="linkToSnapshot" type="boolean">
+                <label>Link To Snapshot</label>
+                <description>Update the snapshot when motion is detected</description>
+                <required>false</required>
+            </parameter>
+        </config-description>
+    </channel-type>
+    <channel-type id="fielddetection">
+        <item-type>Switch</item-type>
+        <label>Field Detection Channel</label>
+        <description>Notification channel for Hikvision field detection events</description>
+        <state readOnly="true"></state>
+        <config-description>
+            <parameter name="linkToSnapshot" type="boolean">
+                <label>Link To Snapshot</label>
+                <description>Update the snapshot when a field detection event is detected</description>
+                <required>false</required>
+            </parameter>
+        </config-description>
+    </channel-type>
+    <channel-type id="linedetection">
+        <item-type>Switch</item-type>
+        <label>Line Detection Channel</label>
+        <description>Notification channel for Hikvision line detection events</description>
+        <state readOnly="true"></state>
+                <config-description>
+        <parameter name="linkToSnapshot" type="boolean">
+                <label>Link To Snapshot</label>
+                <description>Update the snapshot when a line detection event is detected</description>
+                <required>false</required>
+            </parameter>
+        </config-description>
+    </channel-type>
+    <channel-type id="videoloss">
+        <item-type>Switch</item-type>
+        <label>Video Loss Channel</label>
+        <description>Notification channel for Hikvision video loss events</description>
+        <state readOnly="true"></state>
+    </channel-type>
+    <channel-type id="snapshot">
+        <item-type>Image</item-type>
+        <label>Snapshot Channel</label>
+        <description>Snapshot channel for showing an image from a Hikvision camera</description>
+        <config-description>
+            <parameter name="refreshInterval" type="integer">
+                <label>Image Refresh Interval</label>
+                <description>Interval in seconds to update image (0 for no automatic refreshing)</description>
+                <default>0</default>
+                <required>false</required>
+            </parameter>
+        </config-description>
+    </channel-type>
+
+</thing:thing-descriptions>
