@@ -20,7 +20,7 @@ public class HikvisionBindingConstants {
     public static final String BINDING_ID = "hikvision";
 
     // List of all Thing Type UIDs
-    public final static ThingTypeUID THING_TYPE_HIKVISION = new ThingTypeUID(BINDING_ID, "hikvision");
+    public final static ThingTypeUID THING_TYPE_HIKVISION = new ThingTypeUID(BINDING_ID, "camera");
 
     // List of all Channel ids
     public final static String MOTION_DETECTION = "VMD";

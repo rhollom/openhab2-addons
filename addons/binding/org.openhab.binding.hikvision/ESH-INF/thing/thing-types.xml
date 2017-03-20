@@ -4,10 +4,10 @@
         xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
         xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0 http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
 
-    <!-- Hikvision Thing Type -->
-    <thing-type id="hikvision">
-        <label>Hikvision Binding Thing</label>
-        <description>Thing definition for Hikvision Binding</description>
+    <!-- Hikvision Camera Thing Type -->
+    <thing-type id="camera">
+        <label>Hikvision Camera Thing</label>
+        <description>Thing definition for Hikvision Camera</description>
 
         <channels>
             <channel id="VMD" typeId="VMD"/>
@@ -45,7 +45,7 @@
     <channel-type id="VMD">
         <item-type>Switch</item-type>
         <label>Video Motion Detection Channel</label>
-        <description>Notification channel for Hikvision motion detection events</description>
+        <description>Notification channel for Hikvision camera motion detection events</description>
         <state readOnly="true"></state>
         <config-description>
             <parameter name="linkToSnapshot" type="boolean">
@@ -58,7 +58,7 @@
     <channel-type id="fielddetection">
         <item-type>Switch</item-type>
         <label>Field Detection Channel</label>
-        <description>Notification channel for Hikvision field detection events</description>
+        <description>Notification channel for Hikvision camera field detection events</description>
         <state readOnly="true"></state>
         <config-description>
             <parameter name="linkToSnapshot" type="boolean">
@@ -71,7 +71,7 @@
     <channel-type id="linedetection">
         <item-type>Switch</item-type>
         <label>Line Detection Channel</label>
-        <description>Notification channel for Hikvision line detection events</description>
+        <description>Notification channel for Hikvision camera line detection events</description>
         <state readOnly="true"></state>
                 <config-description>
         <parameter name="linkToSnapshot" type="boolean">
@@ -84,7 +84,7 @@
     <channel-type id="videoloss">
         <item-type>Switch</item-type>
         <label>Video Loss Channel</label>
-        <description>Notification channel for Hikvision video loss events</description>
+        <description>Notification channel for Hikvision camera video loss events</description>
         <state readOnly="true"></state>
     </channel-type>
     <channel-type id="snapshot">
