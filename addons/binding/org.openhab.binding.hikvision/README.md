@@ -1,9 +1,3 @@
----
-layout: documentation
----
-
-{% include base.html %}
-
 # Hikvision Binding
 
 This binding creates a direct connection to the event stream of Hikvision IP Cameras.  
